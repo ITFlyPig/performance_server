@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.wangyuelin.app</groupId>
-    <artifactId>app_tools</artifactId>
+    <artifactId>performance_server</artifactId>
     <version>1.0-SNAPSHOT</version>
 
 
