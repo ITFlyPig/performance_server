@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      lang="zh-CN">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap 101 Template</title>
+
+    <link rel="icon" href="/img/icon.ico"/>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
+    <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script language="JavaScript">
+        // window.onload = function () {
+        //     var div = document.getElementById('movie_item_id');
+        //     var w = div.offsetWidth;
+        //     $('img').each( function( index, val ) {
+        //
+        //         // console.log( index, val, this );
+        //         console.log(val);
+        //         //高度为150%，120%用来放图片 30%用来放名称和评分等
+        //         var fh = w * 1.2;
+        //         val.height = fh;
+        //     });
+        //
+        // }
+
+
+    </script>
+</head>
+
+<style type="text/css">
+
+    body {
+        font-size: 1em;
+    }
+
+    .title{
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+    .title_year{
+        font-size: 1.7em;
+        color: darkgrey;
+        font-weight: bold;
+
+    }
+
+    .img-responsive {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .img-responsive img {
+        width: 100%;
+    }
+
+    .intro{
+        display:inline-block;
+        font-size: 1.3em;
+        padding-bottom: 3px;
+        padding-top: 3px;
+    }
+
+    .des_title{
+        font-weight: bold;
+        font-size: 1.7em;
+        background: #dddddd;
+        margin-top: 20px;
+        border-radius: 2px;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        width: 100%;
+        padding-left: 0.4em;
+    }
+
+</style>
+<body>
+
+
+<div class="container">
+    <!--导航 start-->
+    <nav class="navbar navbar-default " role="navigation">
+
+        <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target="#defaultmenu" class="navbar-toggle collapsed">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="index.html" class="navbar-brand">图标</a>
+        </div>
+
+        <div id="defaultmenu" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">恐怖</a></li>
+                <li><a href="#">爱情</a></li>
+                <li><a href="#">动作</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="row">
+        <!--海报-->
+        <div class="col-md-3 col-sm-4 col-lg-3 col-xs-4">
+            <div class="img-responsive">
+                <img src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2461982063.jpg"/>
+            </div>
+        </div>
+        <div class="col-md-8 col-sm-7 col-lg-8 col-xs-7 " >
+            <span class="title">重生</span><span class="title_year">（2018）</span>
+            <br/>
+            <span class="intro">编剧: 姜文 / 何冀平 / 李非 / 孙悦 / 张北海</span>
+            <br/>
+            <span class="intro">主演: 彭于晏 / 廖凡 / 姜文 / 周韵 / 许晴 / 更多...</span>
+            <br/>
+            <span class="intro">类型: 剧情 / 喜剧 / 动作</span>
+            <br/>
+            <span class="intro">制片国家/地区: 中国大陆</span>
+            <br/>
+            <span class="intro">语言: 汉语普通话</span>
+            <br/>
+            <span class="intro">上映日期: 2018-07-13(中国大陆)</span>
+            <br/>
+            <span class="intro">片长: 137分钟</span>
+            <br/>
+            <span class="intro">又名: 侠隐 / Hidden Man</span>
+            <br/>
+            <span class="intro">IMDb链接: tt8434380</span>
+        </div>
+
+    </div>
+    <!--剧情简介-->
+    <div class="des_title">
+        <span >剧情简介</span>
+    </div>
+    <div>
+        <span>&emsp;&emsp;&emsp;&emsp;七七事变前夕，华裔青年小亨德勒（彭于晏 饰）从美国远赴重洋，回到阔别十数年之久的北平从医。然而他真正的名字叫李天然，十三岁那年曾亲眼目睹师父一家遭师兄朱潜龙（廖凡 饰）和日本人根本一郎（泽田谦也 饰）灭门。侥幸逃生的天然被美国人亨德勒医生送往大洋彼岸，接受了极其严苛的训练，而今他怀着绝密的任务踏上故土。亨德勒父子租住神秘男子蓝青峰（姜文 饰）的宅子，蓝是当年辛亥革命的参与者，他与现为警察局长的朱潜龙过从甚密，却又以杀死李天然为筹码，暗中怂恿朱除掉根本一郎。复仇心切的李天然寻找到了仇人，而亨德勒医生则全力阻止养子冒险。在这一过程中，交际花唐凤仪（许晴 饰）与裁缝关巧红（周韵 饰）也卷入了男人的勾心斗角的漩涡里。直到七七事变爆发，所有的矛盾迎来了决断的时刻…… </span>
+
+        <br/>
+        <br/>
+        <span>本片根据张北海的小说《侠隐》改编。</span>
+    </div>
+
+    <div class="des_title">
+        <span >电影相关截图</span>
+    </div>
+    <div class="des_title">
+        <span >在线播放</span>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-sm-3 col-lg-2 col-xs-4" style="margin-top: 10px">
+            <button type="button" class="btn btn-default">在线播放通道1</button>
+        </div>
+        <div class="col-md-2 col-sm-3 col-lg-2 col-xs-4" style="margin-top: 10px">
+            <button type="button" class="btn btn-default">在线播放通道2</button>
+        </div>
+        <div class="col-md-2 col-sm-3 col-lg-2 col-xs-4" style="margin-top: 10px">
+            <button type="button" class="btn btn-default">在线播放通道3</button>
+        </div>
+        <div class="col-md-2 col-sm-3 col-lg-2 col-xs-4" style="margin-top: 10px">
+            <button type="button" class="btn btn-default">在线播放通道4</button>
+        </div>
+        <div class="col-md-2 col-sm-3 col-lg-2 col-xs-4" style="margin-top: 10px">
+            <button type="button" class="btn btn-default">在线播放通道5</button>
+        </div>
+        <div class="col-md-2 col-sm-3 col-lg-2 col-xs-4" style="margin-top: 10px">
+            <button type="button" class="btn btn-default">在线播放通道6</button>
+        </div>
+
+    </div>
+    <div class="des_title">
+        <span >下载地址</span>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item"><a>ftp://ygdy8:ygdy8@yg72.dydytt.net:8244/阳光电影www.ygdy8.com.分贝人生.BD.720p.国语中字.mkv</a> <button type="button" class="btn btn-default" style="margin-left: 20px">下载</button></li>
+        <li class="list-group-item"><a>magnet:?xt=urn:btih:956b0ee8ba12e08e117cf261d9c3dc902a0e4bfa</a></li>
+
+    </ul>
+
+
+</div>
+
+
+<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

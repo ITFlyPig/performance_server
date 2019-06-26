@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Hello World!</title>
+    </head>
+    <body>
+        <h1 th:inline="text">thymeleaf Test</h1>
+        <p th:text="${hello}"></p>
+
+        <tr  th:each="movie,userStat : ${movies}">
+            <td th:text="${movie.name}">Onions</td>
+            <td th:text="${movie.id}">Onions</td>
+        </tr>
+
+        返回的信息<p th:text="${data.getMsg()}"></p>
+        <th:block th:each="movieMap,mapStat:${data.getData()}">
+            <th:block th:each="entry,mapStat:${movieMap.entrySet()}">
+
+                map得到的key：<p th:text="${entry.getKey()}"></p>
+                <th:block th:each="movie,movieStat:${entry.getValue()}">
+                    电影的名称：<td th:text="${movie.getName()}"></td>
+
+                </th:block>
+
+
+
+            </th:block>
+
+        </th:block>
+
+
+    <!--<th:block th:each="movieMap,mapStat:${data}">-->
+        <!--<th:block th:each="movieMap,mapStat:${data}">-->
+            <!--map的key：<strong th:text="mapStat.current.key"></strong>-->
+        <!--<th:block th:each="movie,movieStat:${mapStat.current.value}">-->
+            <!--电影的名称：<strong th:text="${movie.name}"></strong>-->
+
+        <!--</th:block>-->
+
+
+        <!--</th:block>-->
+
+    <!--</th:block>-->
+
+    </body>
+</html>

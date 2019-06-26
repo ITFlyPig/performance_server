@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangyuelin.app.mapper.MovieMapper">
+    <resultMap id="HomeMovieResult" type="com.wangyuelin.app.bean.HomeMovieBean">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="cn_name" property="name" jdbcType="VARCHAR"/>
+        <result column="show_year" property="year" jdbcType="VARCHAR"/>
+        <result column="detail_web_url" property="detailUrl" jdbcType="VARCHAR"/>
+        <result column="douban_rank" property="doubanRank" jdbcType="FLOAT"/>
+        <result column="posters" property="poster" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+    <resultMap id="MovieResult" type="com.wangyuelin.app.bean.MovieDetail">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="cn_name" property="name" jdbcType="VARCHAR"/>
+        <result column="en_name" property="enName" jdbcType="VARCHAR"/>
+        <result column="nick_name" property="nickName" jdbcType="VARCHAR"/>
+        <result column="director" property="director" jdbcType="VARCHAR"/>
+        <result column="scriptwriter" property="scriptwriter" jdbcType="VARCHAR"/>
+        <result column="actors" property="actors" jdbcType="VARCHAR"/>
+        <result column="types" property="types" jdbcType="VARCHAR"/>
+        <result column="location" property="location" jdbcType="VARCHAR"/>
+        <result column="language" property="language" jdbcType="VARCHAR"/>
+        <result column="show_time" property="showTime" jdbcType="VARCHAR"/>
+        <result column="show_year" property="showYear" jdbcType="VARCHAR"/>
+        <result column="movie_time" property="movieTime" jdbcType="VARCHAR"/>
+        <result column="intro" property="intro" jdbcType="VARCHAR"/>
+        <result column="detail_web_url" property="detaiWeblUrl" jdbcType="VARCHAR"/>
+        <result column="douban_rank" property="doubanRank" jdbcType="FLOAT"/>
+        <result column="download_web_url" property="downloadWebUrl" jdbcType="VARCHAR"/>
+        <result column="movie_tag" property="tag" jdbcType="VARCHAR"/>
+        <result column="posters" property="posters" jdbcType="VARCHAR"/>
+
+    </resultMap>
+
+
+    <select id="getByTag" parameterType="String" resultMap="HomeMovieResult">
+        select * from movie where movie_tag  like #{detailUrl} LIMIT 12
+    </select>
+
+    <select id="getMovies" resultMap="HomeMovieResult" >
+        SELECT * FROM movie_copy1 WHERE movie_tag LIKE CONCAT('%', #{tag})  LIMIT #{num}
+    </select>
+
+    <select id="getMovieById" resultMap="MovieResult" >
+        SELECT * FROM movie_copy1 WHERE id = #{id}
+    </select>
+
+</mapper>
