@@ -1,5 +1,6 @@
 package com.wangyuelin.app.controller;
 
+import com.wangyuelin.app.utils.TextUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
@@ -61,33 +62,24 @@ public class WebSocketServer {
     @OnMessage
     public void onMessage(String message, Session session) {
         log.info("收到来自窗口" + sid + "的信息:" + message);
-        //群发消息
-//        for (WebSocketServer item : webSocketList) {
-//            try {
-//                if (item.sid.equals("o")) {
-//                    System.out.println("将收到的信息写到 sid: o  中" );
-//                    item.sendMessage(message);
-//                }
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-    }
+        if (sid.equals("i")) {//上传进来的消息，这里不能混乱
+            //群发消息
+            for (WebSocketServer item : webSocketList) {
+                try {
+                    if (item.sid.equals("o")) {
+                        System.out.println("将收到的信息写到 sid: o  中" );
+                        item.sendMessage(message);
+                    }
 
-    @OnMessage
-    public void onMessage(byte[] bytes, Session session) {
-//        if (bytes == null) {
-//            return;
-//        }
-//
-//        try {
-//            log.info("onMessage 收到的字节数组：" + new String(bytes, "utf-8"));
-//        } catch (UnsupportedEncodingException e) {
-//            e.printStackTrace();
-//        }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
 
     }
+
+
 
 
 
